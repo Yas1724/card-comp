@@ -1,0 +1,204 @@
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: #f4f6fb;
+  color: #222;
+}
+
+/* ========== APP LAYOUT ========== */
+.app-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.app-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* ========== FORM STYLING ========== */
+.form-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+
+  margin-bottom: 40px;
+}
+
+.form-card input[type="text"],
+.form-card input[type="file"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.form-card input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.form-card button {
+  grid-column: span 2;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form-card button:hover {
+  background: #2563eb;
+}
+
+/* ========== CARD GRID ========== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* ========== PROFILE CARD ========== */
+.profile-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  height: 520px;                 /* 🔥 FIXED CARD HEIGHT */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ========== IMAGE WRAPPER ========== */
+.image-wrapper {
+  width: 100%;
+  height: 220px;                 /* 🔥 FIXED IMAGE AREA */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* 🔥 IMAGE ADJUSTS */
+}
+
+/* ========== CARD CONTENT ========== */
+.profile-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.profile-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.profile-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ========== INTERESTS ========== */
+.interests-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.interests-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.interests-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* ========== SOCIAL BUTTONS ========== */
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.socials a {
+  flex: 1;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s ease;
+}
+
+.socials a:hover {
+  opacity: 0.85;
+}
+
+.socials .twitter {
+  background: #1da1f2;
+}
+
+.socials .github {
+  background: #24292e;
+}
+
+.socials .linkedin {
+  background: #0077b5;
+}
+
+/* ========== DELETE BUTTON ========== */
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #ef4444;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .profile-card {
+    height: auto;
+  }
+
+  .image-wrapper {
+    height: 180px;
+  }
+}
