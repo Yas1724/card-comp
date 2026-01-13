@@ -1,3 +1,4 @@
+import { BASE_URL } from "../api";
 import React from "react";
 
 function Card({ card, onDelete }) {
@@ -6,7 +7,7 @@ function Card({ card, onDelete }) {
 
   return (
     <div className="profile-card">
-      {/* ❌ Delete button only for card owner */}
+      {/* Delete button only for card owner */}
       {card.createdBy === currentUserId && (
         <button
           className="delete-btn"
@@ -17,11 +18,11 @@ function Card({ card, onDelete }) {
         </button>
       )}
 
-      {/* 🖼 Image */}
+      {/* Image */}
       <div className="image-wrapper">
         {card.imageUrl ? (
           <img
-            src={`http://localhost:5000${card.imageUrl}`}
+            src={`${BASE_URL}${card.imageUrl}`}
             alt={card.name}
           />
         ) : (
@@ -41,12 +42,12 @@ function Card({ card, onDelete }) {
         )}
       </div>
 
-      {/* 📄 Content */}
+      {/*  Content */}
       <div className="profile-content">
         <h2>{card.name}</h2>
         <p>{card.bio}</p>
 
-        {/* ⭐ Interests */}
+        {/*  Interests */}
         {Array.isArray(card.interests) && card.interests.length > 0 && (
           <>
             <div className="interests-title">Interests</div>
@@ -58,7 +59,7 @@ function Card({ card, onDelete }) {
           </>
         )}
 
-        {/* 🔗 Social links */}
+        {/*  Social links */}
         <div className="socials">
           {card.socials?.twitter && (
             <a
@@ -97,3 +98,4 @@ function Card({ card, onDelete }) {
 }
 
 export default Card;
+
