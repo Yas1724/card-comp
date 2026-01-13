@@ -23,7 +23,7 @@ function CreateCardForm({ onAdd }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    // 🔥 FormData yahan banta hai
+    //  FormData yahan banta hai
     const data = new FormData();
 
     data.append("name", form.name);
@@ -48,7 +48,7 @@ function CreateCardForm({ onAdd }) {
       data.append("image", form.image);
     }
 
-    // 🔐 OWNER ID (IMPORTANT)
+    //  OWNER ID (IMPORTANT)
     data.append("createdBy", localStorage.getItem("userId"));
 
     const newCard = await createCard(data);
@@ -118,3 +118,4 @@ function CreateCardForm({ onAdd }) {
 }
 
 export default CreateCardForm;
+
